@@ -14,6 +14,8 @@ def index():
 
     jobs = Job.query.filter_by(active=True).all()
 
+    user = User.query.all()
+
     complete_list = []
 
     for job in jobs:
@@ -21,7 +23,7 @@ def index():
         complete_list.append((job,work))
 
 
-    return render_template('index.html', complete_list=complete_list)
+    return render_template('index.html', complete_list=complete_list, user=user)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -47,10 +49,11 @@ def load_user(id):
 def add_job():
     job = request.form['job']
 
-    new_job = Job(name=job, description="", active=True)
+    if job != "":
+        new_job = Job(name=job, description="", active=True)
 
-    db.session.add(new_job)
-    db.session.commit()
+        db.session.add(new_job)
+        db.session.commit()
 
     return redirect('/')
 
@@ -58,10 +61,11 @@ def add_job():
 def add_work():
     job = request.form['job']
     user = request.form['user']
-    new_work = Work(user=user, job=job, date_time=datetime.now(), comment="")
+    if job != "" and not user is None:
+        new_work = Work(user=user, job=job, date_time=datetime.now(), comment="")
     
-    db.session.add(new_work)
-    db.session.commit()
+        db.session.add(new_work)
+        db.session.commit()
     
     return redirect('/')
 

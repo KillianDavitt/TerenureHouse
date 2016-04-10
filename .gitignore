@@ -1,0 +1,4 @@
+*.sqlite
+flask/
+__pycache__
+db_repository

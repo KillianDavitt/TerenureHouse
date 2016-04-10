@@ -1,0 +1,24 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if title %}
+    <title>{{ title }} - DataParty</title>
+    {% else %}
+    <title>DataParty</title>
+    {% endif %}
+
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/paper/bootstrap.css">
+    <!-- overwrite bootstrap theme -->
+</head>
+
+
+
+
+{% block content %} {% endblock %}
+
+</html>

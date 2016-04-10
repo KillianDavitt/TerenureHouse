@@ -1,1 +1,41 @@
-<p>Testing</p>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    Basic panel example
+  {% for job in complete_list %}
+<ul class="list-group">
+<h3>{{ job[0].name }}</h3>
+
+   {% for work in job[1] %}
+	<li class="list-group-item">
+        {{ work.user }}
+	</li>
+   {% endfor %}
+	<li class="list-group-item">
+
+	<form action="/add_work" method="POST">
+		<input type="text" name="user"/>
+		<input type="submit" name="job" value="{{ job[0].name }}"/>
+	</form>
+	</li>
+</ul>
+{% endfor %}
+</div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+    <form action="add_job" method="POST">
+        <input type="text" name="job"/>
+        <input type="submit" value="Add New Job"/>
+    </form>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}

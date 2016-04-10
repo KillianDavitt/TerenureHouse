@@ -21,7 +21,7 @@ class User(db.Model):
 class Job(db.Model):
     name = db.Column(db.String(64), primary_key=True)
     description = db.Column(db.String(120))
-
+    active = db.Column(db.Boolean, default=True)
 
 class Work(db.Model):
     work_id = db.Column(db.Integer, primary_key=True)

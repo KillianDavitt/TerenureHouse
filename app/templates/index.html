@@ -17,7 +17,12 @@
 	<li class="list-group-item">
 
 	<form action="/add_work" method="POST">
-		<input type="text" name="user"/>
+		<select name="user">
+            <option value="Jeremy">Jerry Bear</option>
+            <option value="Alan">ULN</option>
+            <option value="Maki">Paki</option>
+            <option value="Killian">Killian</option>
+        </select>
 		<input type="submit" name="job" value="{{ job[0].name }}"/>
 	</form>
 	</li>

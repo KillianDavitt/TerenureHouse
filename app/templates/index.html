@@ -22,7 +22,7 @@
 	<form action="/add_work" method="POST">
 		<select name="user">
             {% for name in user %}
-                <option value="{{ name.name }}">{{ name.nickname }}</option>
+                <option value="{{ name.username }}">{{ name.nickname }}</option>
             {% endfor %}
         </select>
 		<input type="submit" name="job" value="{{ job[0].name }}"/>

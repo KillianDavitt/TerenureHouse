@@ -5,7 +5,7 @@
     <h1> Terenure </h1>
 </div>
 {% for job in complete_list %}
-<div class="container col-xs-6 padding">
+<div class="clearfix col-xs-6 padding">
 <div class="panel panel-default" >
   <div class="panel-body">
 
@@ -22,7 +22,7 @@
 	<form action="/add_work" method="POST">
 		<select name="user">
             {% for name in user %}
-                <option value="{{ name.username }}">{{ name.nickname }}</option>
+                <option value="{{ name.username }}">{{ name.nickname }}  </option>
             {% endfor %}
         </select>
 		<input type="submit" name="job" value="{{ job[0].name }}"/>

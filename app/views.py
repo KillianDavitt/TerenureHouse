@@ -19,7 +19,7 @@ def index():
     complete_list = []
 
     for job in jobs:
-        work = Work.query.filter_by(job=job.name).all()
+        work = list(reversed(Work.query.filter_by(job=job.name).order_by(Work.date_time.desc()).limit(5).all()))
         complete_list.append((job,work))
 
 

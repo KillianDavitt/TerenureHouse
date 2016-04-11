@@ -1,0 +1,10 @@
+[Unit]
+Description=The Terenure House website
+
+[Service]
+WorkingDirectory=/home/killian/TerenureHouse
+ExecStart=/home/killian/TerenureHouse/flask/bin/uwsgi --ini terenure.ini
+User=root
+
+[Install]
+WantedBy=multi-user.target

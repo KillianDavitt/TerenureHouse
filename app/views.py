@@ -14,7 +14,7 @@ def index():
 
     jobs = Job.query.filter_by(active=True).all()
 
-    user = User.query.all()
+    user = User.query.order_by(User.username).all()
 
     complete_list = []
 

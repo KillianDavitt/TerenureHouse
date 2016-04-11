@@ -8,6 +8,10 @@ from .models import User, Job, Work
 
 from datetime import datetime
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/')
 @app.route('/index')
 def index():

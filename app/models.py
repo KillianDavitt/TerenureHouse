@@ -19,6 +19,9 @@ class User(db.Model):
     def is_anonymous(self):
         return False
 
+    def get_id(self):
+        return self.user_id
+
 class Job(db.Model):
     name = db.Column(db.String(64), primary_key=True)
     description = db.Column(db.String(120))

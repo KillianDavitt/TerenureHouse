@@ -14,6 +14,7 @@ def about():
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
 
     jobs = Job.query.filter_by(active=True).all()
@@ -33,12 +34,12 @@ def index():
 def login():
     pin_form = PinForm()
 
+    user = User.query.filter_by().first()
+
     if pin_form.validate_on_submit():
-        user = pin_form.user.data
         pin = pin_form.pin.data
-        user = User.query.filter_by(username=user).first()
-        if user.pin == pin:
-            login_user(user.username)
+        if pin==9112016:
+            login_user(user, remember=True)
             return redirect('/')
 
     u = User.query.all()

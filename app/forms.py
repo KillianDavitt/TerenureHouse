@@ -4,5 +4,4 @@ from wtforms.validators import DataRequired
 
 
 class PinForm(Form):
-    user = StringField(validators=[DataRequired()])
     pin = IntegerField()

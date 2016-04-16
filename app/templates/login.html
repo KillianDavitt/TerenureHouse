@@ -1,13 +1,6 @@
-<p>Testingtessting</p>
-
-{% for user in users %}
-    {{ user.username }}
-{% endfor %}
 
 <form action="/login" method="POST">
 {{ pin_form.csrf_token }}
-{{ pin_form.user }}
-<br>
 {{ pin_form.pin }}
-<button type="submit">Submit</button>
+<button type="submit">Login</button>
 </form>
